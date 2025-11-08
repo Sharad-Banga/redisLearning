@@ -1,8 +1,8 @@
 interface Game {
-  id:string;
+  id: string;
   whitePlayerName : string;
-  blackPlayerName :  string;
-  moves : string[]
+  blackPlayerName : string;
+  moves : string[];
 }
 
-export const games: Game[] = []; 
+export const games :Game[] = [];
