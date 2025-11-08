@@ -1,15 +1,19 @@
 import { games } from "./store.js";
-import { startLogger } from "./logger.js";
+import { loggerWork } from "./logger.js";
 
-startLogger();
 
-setInterval(()=>{
+loggerWork();
 
-  games.push({
-    id:Math.random().toString(),
-    whitePlayerName:'sam',
-    blackPlayerName:'kaka',
-    moves : []
-  })
+function mainWork(){
+  setInterval(()=>{
 
-},5000)
+    games.push({
+      id:Math.random().toString(),
+      whitePlayerName : "sam",
+      blackPlayerName : "bob",
+      moves : []
+    })
+  },5000)
+}
+
+mainWork();

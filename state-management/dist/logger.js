@@ -1,7 +1,11 @@
 import { games } from "./store.js";
-export function startLogger() {
+let c = 0;
+export function loggerWork() {
     setInterval(() => {
+        c++;
+        console.log("log count : " + c);
         console.log(games);
     }, 5000);
 }
+// loggerWork();
 //# sourceMappingURL=logger.js.map
