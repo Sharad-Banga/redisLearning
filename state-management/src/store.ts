@@ -1,32 +1,42 @@
 interface Game {
   id : string;
+  blackPlayerName : string;
   whitePlayerName : string;
-  blackPlayerName:string;
   moves : string[];
 }
 
 export class GameManager{
-  private games:Game[] =[];
+  games : Game[] = [];
+  static instance : GameManager;
 
-  public addGame(game : Game){
-    this.games.push(game);
+  constructor(){
+    this.games = [];
   }
 
-  public getGames(){
-    return this.games;
-  }
-
-  public addMove(gameId: string, movee: string) {
-        const game = this.games.find(game => game.id === gameId);
-        if (game) {
-            game.moves.push(movee);
-        }
-  }
-
-  public logState(){
-    console.log(this.games);
+  static getInstance(){
+    if(GameManager.instance){
+      return GameManager.instance;
+    }
     
+    GameManager.instance = new GameManager();
+    return this.instance;
   }
 
+  addmove(gameId : string , move : string){
+    const game = this.games.find(game => game.id == gameId);
+  }
+
+  addGame(gameId :string){
+      const game = {
+        id : gameId,
+        blackPlayerName : "dexter",
+        whitePlayerName : "joe",
+        moves : []
+      }
+
+      this.games.push(game);
+  }
 
 }
+
+export const gameManager = GameManager.getInstance();

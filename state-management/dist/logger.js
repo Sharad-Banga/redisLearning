@@ -1,11 +1,9 @@
-import { games } from "./store.js";
-let c = 0;
-export function loggerWork() {
+import { GameManager } from "./store.js";
+// const gameManager = new GameManager();
+import { gameManager } from "./store.js";
+export function gameLogger() {
     setInterval(() => {
-        c++;
-        console.log("log count : " + c);
-        console.log(games);
+        console.log(gameManager.games);
     }, 5000);
 }
-// loggerWork();
 //# sourceMappingURL=logger.js.map

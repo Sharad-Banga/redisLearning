@@ -1,19 +1,15 @@
-import { games } from "./store.js";
-import { loggerWork } from "./logger.js";
+import { GameManager } from "./store.js";
+import { gameLogger } from "./logger.js";
 
+// const gameManager = new GameManager();
+import { gameManager } from "./store.js";
+gameLogger();
 
-loggerWork();
+function pusher(){
 
-function mainWork(){
   setInterval(()=>{
-
-    games.push({
-      id:Math.random().toString(),
-      whitePlayerName : "sam",
-      blackPlayerName : "bob",
-      moves : []
-    })
+    gameManager.addGame("123");
   },5000)
 }
 
-mainWork();
+pusher();

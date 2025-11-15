@@ -1,2 +1,2 @@
-export declare function loggerWork(): void;
+export declare function gameLogger(): void;
 //# sourceMappingURL=logger.d.ts.map

@@ -1,15 +1,12 @@
-import { games } from "./store.js";
-import { loggerWork } from "./logger.js";
-loggerWork();
-function mainWork() {
+import { GameManager } from "./store.js";
+import { gameLogger } from "./logger.js";
+// const gameManager = new GameManager();
+import { gameManager } from "./store.js";
+gameLogger();
+function pusher() {
     setInterval(() => {
-        games.push({
-            id: Math.random().toString(),
-            whitePlayerName: "sam",
-            blackPlayerName: "bob",
-            moves: []
-        });
+        gameManager.addGame("123");
     }, 5000);
 }
-mainWork();
+pusher();
 //# sourceMappingURL=index.js.map

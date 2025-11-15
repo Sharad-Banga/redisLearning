@@ -1,9 +1,17 @@
 interface Game {
     id: string;
-    whitePlayerName: string;
     blackPlayerName: string;
-    moves: [];
+    whitePlayerName: string;
+    moves: string[];
 }
-export declare const games: Game[];
+export declare class GameManager {
+    games: Game[];
+    static instance: GameManager;
+    constructor();
+    static getInstance(): GameManager;
+    addmove(gameId: string, move: string): void;
+    addGame(gameId: string): void;
+}
+export declare const gameManager: GameManager;
 export {};
 //# sourceMappingURL=store.d.ts.map
