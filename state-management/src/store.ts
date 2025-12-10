@@ -6,7 +6,7 @@ interface Game {
 }
 
 export class GameManager{
-  games : Game[] = [];
+  games : Game[] = []; 
   static instance : GameManager;
 
   constructor(){
